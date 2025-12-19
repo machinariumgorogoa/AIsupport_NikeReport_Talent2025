@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportswear Brands Talent Strategy Analysis - Bilingual</title>
+    
+    <!-- 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ========== CSS变量 - 浅色主题 ========== */
+        :root {
+            /* 主色调 - 紫色系 */
+            --primary-color: #7C3AED;
+            --primary-light: #A78BFA;
+            --primary-dark: #5B21B6;
+            --primary-darker: #4C1D95;
+            
+            /* 背景色 */
+            --bg-color: #ffffff;
+            --bg-secondary: #f8f7ff;
+            --bg-module: linear-gradient(145deg, 
+                rgba(167, 139, 250, 0.08) 0%, 
+                rgba(139, 92, 246, 0.05) 30%, 
+                rgba(124, 58, 237, 0.02) 70%, 
+                rgba(109, 40, 217, 0.01) 100%);
+            --bg-header: linear-gradient(135deg, 
+                #7C3AED 0%, 
+                #6D28D9 30%, 
+                #5B21B6 70%, 
+                #4C1D95 100%);
+            
+            /* 文字颜色 */
+            --text-primary: #1F2937;
+            --text-secondary: #374151;
+            --text-light: #6B7280;
+            --text-on-dark: #ffffff;
+            
+            /* 边框 */
+            --border-color: rgba(167, 139, 250, 0.3);
+            --border-module: linear-gradient(135deg, 
+                rgba(167, 139, 250, 0.5), 
+                rgba(124, 58, 237, 0.8), 
+                rgba(91, 33, 182, 0.5)) 1;
+            
+            /* 阴影 */
+            --shadow-light: 0 6px 20px rgba(124, 58, 237, 0.05);
+            --shadow-medium: 0 12px 35px rgba(124, 58, 237, 0.12);
+            --shadow-strong: 0 6px 25px rgba(124, 58, 237, 0.18);
+            
+            /* 科幻元素 */
+            --neon-glow: 0 0 10px rgba(124, 58, 237, 0.7), 0 0 20px rgba(124, 58, 237, 0.5), 0 0 30px rgba(124, 58, 237, 0.3);
+            --neon-text: 0 0 5px rgba(124, 58, 237, 0.8), 0 0 10px rgba(124, 58, 237, 0.6);
+            
+            /* 过渡 */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* ========== 深色主题变量 ========== */
+        .dark-theme {
+            /* 主色调 - 紫色系（提高明度） */
+            --primary-color: #A78BFA;
+            --primary-light: #C4B5FD;
+            --primary-dark: #8B5CF6;
+            --primary-darker: #7C3AED;
+            
+            /* 背景色 */
+            --bg-color: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-module: linear-gradient(145deg, 
+                rgba(167, 139, 250, 0.12) 0%, 
+                rgba(139, 92, 246, 0.08) 30%, 
+                rgba(124, 58, 237, 0.05) 70%, 
+                rgba(109, 40, 217, 0.03) 100%);
+            --bg-header: linear-gradient(135deg, 
+                #0F172A 0%, 
+                #1E293B 30%, 
+                #334155 70%, 
+                #475569 100%);
+            
+            /* 文字颜色 */
+            --text-primary: #F1F5F9;
+            --text-secondary: #CBD5E1;
+            --text-light: #94A3B8;
+            --text-on-dark: #FFFFFF;
+            
+            /* 边框 */
+            --border-color: rgba(167, 139, 250, 0.4);
+            --border-module: linear-gradient(135deg, 
+                rgba(167, 139, 250, 0.6), 
+                rgba(124, 58, 237, 0.9), 
+                rgba(91, 33, 182, 0.6)) 1;
+            
+            /* 阴影 */
+            --shadow-light: 0 6px 20px rgba(15, 23, 42, 0.3);
+            --shadow-medium: 0 12px 35px rgba(15, 23, 42, 0.4);
+            --shadow-strong: 0 6px 25px rgba(15, 23, 42, 0.5);
+            
+            /* 科幻元素 */
+            --neon-glow: 0 0 15px rgba(167, 139, 250, 0.9), 0 0 30px rgba(167, 139, 250, 0.7), 0 0 45px rgba(167, 139, 250, 0.5);
+            --neon-text: 0 0 8px rgba(167, 139, 250, 1), 0 0 15px rgba(167, 139, 250, 0.8);
+        }
+        
+        /* ========== 基础重置与全局样式 ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+        }
+        
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            position: relative;
+            min-height: 100vh;
+            padding-bottom: 80px;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+        
+        /* ========== 禁用选择效果 ========== */
+        body::selection,
+        body ::selection {
+            background: transparent;
+            color: inherit;
+        }
+        
+        body::-moz-selection,
+        body ::-moz-selection {
+            background: transparent;
+            color: inherit;
+        }
+        
+        /* ========== 头部区域 ========== */
+        .header {
+            background: var(--bg-header);
+            color: var(--text-on-dark);
+            padding: 32px 40px 28px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+            transition: background var(--transition-normal);
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, 
+                rgba(255, 255, 255, 0.3) 0%, 
+                rgba(255, 255, 255, 0.6) 50%, 
+                rgba(255, 255, 255, 0.3) 100%);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            max-width: 85%;
+            font-family: 'Orbitron', sans-serif;
+            position: relative;
+        }
+        
+        .header h1::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 0;
+            font-size: 28px;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            opacity: 0.92;
+            max-width: 800px;
+            margin-bottom: 5px;
+        }
+        
+        /* ========== 控制面板 - 右上角 ========== */
+        .control-panel {
+            position: absolute;
+            top: 32px;
+            right: 40px;
+            z-index: 10;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        /* ========== 主题切换按钮 - 小型图标按钮 ========== */
+        .theme-toggle {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.18) 0%, 
+                rgba(255, 255, 255, 0.12) 100%);
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all var(--transition-normal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        
+        .theme-toggle:hover {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.25) 0%, 
+                rgba(255, 255, 255, 0.18) 100%);
+            border-color: rgba(255, 255, 255, 0.55);
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .theme-toggle:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+        }
+        
+        /* ========== 语言选择器 ========== */
+        .language-selector select {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.18) 0%, 
+                rgba(255, 255, 255, 0.12) 100%);
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            color: white;
+            padding: 10px 18px 10px 15px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all var(--transition-normal);
+            min-width: 130px;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 18px;
+            padding-right: 40px;
+        }
+        
+        .language-selector select:hover {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.25) 0%, 
+                rgba(255, 255, 255, 0.18) 100%);
+            border-color: rgba(255, 255, 255, 0.55);
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-selector select:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+        }
+        
+        .language-selector select option {
+            background: var(--primary-dark);
+            color: white;
+            font-weight: 500;
+        }
+        
+        /* ========== 主内容区域 ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 45px 25px 100px;
+        }
+        
+        /* ========== 语言内容控制 ========== */
+        .lang-content {
+            display: none;
+        }
+        
+        .lang-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* ========== 模块样式 - 增强渐变效果 ========== */
+        .module {
+            background: var(--bg-module);
+            border: 2.5px solid;
+            border-image: var(--border-module);
+            border-radius: 14px;
+            padding: 35px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                var(--shadow-light),
+                0 2px 4px rgba(124, 58, 237, 0.03),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-slow);
+        }
+        
+        .dark-theme .module {
+            box-shadow: 
+                var(--shadow-light),
+                0 2px 4px rgba(15, 23, 42, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        
+        .module:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                var(--shadow-medium),
+                0 4px 8px rgba(124, 58, 237, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+        
+        .dark-theme .module:hover {
+            box-shadow: 
+                var(--shadow-medium),
+                0 4px 8px rgba(15, 23, 42, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        .module::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, 
+                var(--primary-light) 0%, 
+                var(--primary-color) 30%, 
+                var(--primary-dark) 70%, 
+                var(--primary-darker) 100%);
+            opacity: 0.85;
+            z-index: 1;
+        }
+        
+        .module::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(167, 139, 250, 0.03) 0%, 
+                rgba(124, 58, 237, 0.01) 50%, 
+                transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .module-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* ========== 模块标题 ========== */
+        .module-title {
+            color: var(--primary-color);
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 18px;
+            position: relative;
+            letter-spacing: -0.02em;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .module-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-light), var(--primary-color));
+            border-radius: 3px;
+            box-shadow: var(--neon-glow);
+        }
+        
+        /* ========== 模块内容文字 ========== */
+        .module p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 17px;
+            line-height: 1.75;
+            font-weight: 400;
+        }
+        
+        .module strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .module em {
+            color: var(--primary-light);
+            font-style: italic;
+        }
+        
+        /* ========== 列表样式 ========== */
+        .module ul, .module ol {
+            margin-left: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .module li {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            font-size: 16.5px;
+            line-height: 1.7;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        .module ul li::before {
+            content: '▸';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+            top: 0;
+        }
+        
+        /* ========== 表格样式 ========== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(124, 58, 237, 0.08);
+            border: 1.5px solid var(--border-color);
+        }
+        
+        .dark-theme .comparison-table {
+            box-shadow: 0 5px 18px rgba(15, 23, 42, 0.2);
+        }
+        
+        .comparison-table thead {
+            background: linear-gradient(135deg, 
+                rgba(124, 58, 237, 0.95) 0%, 
+                rgba(91, 33, 182, 0.95) 100%);
+        }
+        
+        .dark-theme .comparison-table thead {
+            background: linear-gradient(135deg, 
+                rgba(167, 139, 250, 0.95) 0%, 
+                rgba(139, 92, 246, 0.95) 100%);
+        }
+        
+        .comparison-table th {
+            color: white;
+            text-align: left;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 16px;
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+        }
+        
+        .comparison-table th:last-child {
+            border-right: none;
+        }
+        
+        .comparison-table th::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .comparison-table tbody tr {
+            transition: background-color var(--transition-fast);
+        }
+        
+        .comparison-table tbody tr:hover {
+            background-color: rgba(245, 243, 255, 0.4);
+        }
+        
+        .dark-theme .comparison-table tbody tr:hover {
+            background-color: rgba(30, 41, 59, 0.6);
+        }
+        
+        .comparison-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(167, 139, 250, 0.15);
+            background-color: rgba(255, 255, 255, 0.85);
+            color: var(--text-secondary);
+            vertical-align: top;
+            font-size: 15.5px;
+        }
+        
+        .dark-theme .comparison-table td {
+            background-color: rgba(30, 41, 59, 0.7);
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(167, 139, 250, 0.25);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:nth-child(even) td {
+            background-color: rgba(250, 249, 255, 0.9);
+        }
+        
+        .dark-theme .comparison-table tr:nth-child(even) td {
+            background-color: rgba(30, 41, 59, 0.8);
+        }
+        
+        /* ========== 页脚 ========== */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, 
+                var(--bg-color) 0%, 
+                var(--bg-secondary) 100%);
+            border-top: 2px solid;
+            border-image: linear-gradient(90deg, 
+                rgba(167, 139, 250, 0.4), 
+                rgba(124, 58, 237, 0.7), 
+                rgba(167, 139, 250, 0.4)) 1;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 -5px 25px rgba(124, 58, 237, 0.05);
+            transition: background var(--transition-normal);
+        }
+        
+        .dark-theme .footer {
+            box-shadow: 0 -5px 25px rgba(15, 23, 42, 0.2);
+        }
+        
+        .copyright {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        
+        .timestamp {
+            color: var(--primary-dark);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        
+        /* ========== 响应式设计 ========== */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 35px 20px 90px;
+            }
+            
+            .module {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 28px 25px 24px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+                max-width: 100%;
+                padding-top: 10px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .control-panel {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-bottom: 20px;
+                justify-content: flex-end;
+                width: 100%;
+            }
+            
+            .theme-toggle {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .language-selector select {
+                min-width: 110px;
+                padding: 8px 15px;
+            }
+            
+            .container {
+                padding: 30px 15px 80px;
+            }
+            
+            .module {
+                padding: 25px 20px;
+            }
+            
+            .module-title {
+                font-size: 22px;
+            }
+            
+            .footer {
+                padding: 15px 25px;
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .module-title {
+                font-size: 20px;
+            }
+            
+            .module p {
+                font-size: 16px;
+            }
+            
+            .control-panel {
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 10px;
+            }
+        }
+        
+        /* ========== 自定义滚动条 ========== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(245, 243, 255, 0.6);
+            border-radius: 5px;
+        }
+        
+        .dark-theme ::-webkit-scrollbar-track {
+            background: rgba(30, 41, 59, 0.6);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, 
+                rgba(167, 139, 250, 0.8), 
+                rgba(124, 58, 237, 0.9));
+            border-radius: 5px;
+            border: 2px solid var(--bg-color);
+        }
+        
+        .dark-theme ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, 
+                rgba(167, 139, 250, 0.9), 
+                rgba(139, 92, 246, 0.9));
+            border: 2px solid var(--bg-color);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, 
+                rgba(124, 58, 237, 0.9), 
+                rgba(91, 33, 182, 0.9));
+        }
+        
+        .dark-theme ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, 
+                rgba(167, 139, 250, 1), 
+                rgba(139, 92, 246, 1));
+        }
+        
+        /* ========== 打印样式 ========== */
+        @media print {
+            .control-panel,
+            .footer {
+                display: none;
+            }
+            
+            .module {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .lang-content:not(.active) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <div class="header">
+        <div class="header-content">
+            <h1>Deep Benchmarking Analysis of Talent Strategies</h1>
+            <div class="subtitle">Sportswear Brands in the China Market (2025)</div>
+            
+            <div class="control-panel">
+                <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="language-selector">
+                    <select id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 英文内容区域 -->
+    <div class="container lang-content active" id="en-content">
+        <!-- 模块 1: Executive Summary -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">Executive Summary</div>
+                <p>In 2025, competition in China's sports and outdoor market has fundamentally evolved—from battles over marketing and distribution channels into a decisive confrontation over <strong>organizational capability and talent models</strong>. This report delivers an in-depth analysis of the talent strategy fundamentals of seven core competitors:</p>
+                <ul>
+                    <li><strong>ANTA</strong> has built a highly defensible and difficult-to-replicate <em>"symbiotic" talent system</em>. Through internal cultivation and deeply embedded welfare mechanisms, it has established an exceptionally stable talent foundation.</li>
+                    <li><strong>adidas</strong> has created an outstanding employee experience through its <em>"homecourt" culture</em> and strengthened its retail talent pipeline via accelerated development programs, thereby reinforcing its local roots.</li>
+                    <li><strong>LI-NING</strong> demonstrates extreme business agility, leveraging highly flexible incentive mechanisms and flat decision-making structures to attract execution-oriented, results-driven talent.</li>
+                    <li><strong>Emerging brands such as On</strong> are diverting top-tier <em>"product-believer"</em> innovators by appealing to pure professional conviction and ultra-flat organizational structures.</li>
+                    <li><strong>Xtep</strong> has vertically entrenched itself in the running category, where its ecosystem-based approach creates unique cohesion among highly specialized professionals.</li>
+                    <li><strong>PEAK's</strong> recent strategic adjustments reflect an efficiency-first mindset; the resulting talent mobility may generate selective recruitment opportunities in specific functional areas.</li>
+                </ul>
+                <p>For <strong>Nike</strong>, the core challenge is clear: its globally standardized systems are increasingly insufficient when responding to local agility demands, deepening category specialization, and meeting the new expectations of talent—namely <strong>value alignment</strong> and <strong>accelerated growth</strong>.</p>
+                <p>In response, this report proposes the <strong>"Pathfinder Program"</strong>, recommending that Nike immediately initiate an inside-out organizational transformation through a three-phase approach:</p>
+                <ol>
+                    <li>Establishing critical expert roles</li>
+                    <li>Creating innovation special zones</li>
+                    <li>Reframing its employer narrative</li>
+                </ol>
+                <p>The objective is to decisively win the talent war of the next five years.</p>
+            </div>
+        </div>
+        
+        <!-- 模块 2: Key Conclusions -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">Key Conclusions</div>
+                <p>The current competitive landscape represents an ultimate contest of <strong>organizational models</strong>.</p>
+                <ul>
+                    <li><strong>ANTA</strong> cultivates <em>"insiders"</em> through systems.</li>
+                    <li><strong>adidas</strong> unites <em>"strivers"</em> through culture.</li>
+                    <li><strong>On</strong> attracts <em>"believers"</em> through conviction.</li>
+                </ul>
+                <p>Nike must resolve the inherent paradox between <em>"global standards"</em> and <em>"local agility."</em> The answer is <strong>not</strong> simple poaching, but rather the deliberate design of a more compelling <strong>new working model</strong> for its target talent segments.</p>
+            </div>
+        </div>
+        
+        <!-- 模块 3: ANTA vs Nike -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">1. ANTA Group vs. Nike: Systemic Symbiosis vs. Brand Halo</div>
+                <p>ANTA has built an internally generated talent system that is exceptionally difficult to replicate. Its core is not aggressive external hiring through premium compensation, but the long-cycle cultivation of backbone talent imbued with <em>"ANTA DNA"</em> over a ten-year horizon.</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Dimension</th>
+                            <th>ANTA Group</th>
+                            <th>Nike</th>
+                            <th>Implications and Challenges for Nike</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Strategic Core</strong></td>
+                            <td>A <em>"symbiotic value"</em> system. Employees are regarded as long-term business partners. Through ultra-long-term investment, ANTA aligns individual career trajectories with corporate growth, creating resonance over time.</td>
+                            <td>Brand-driven attraction underpinned by DEI (Diversity, Equity & Inclusion). Leverages global brand power and inclusive values to attract talent worldwide.</td>
+                            <td><strong>Challenge:</strong> ANTA's system produces highly loyal mid-level management. Nike finds it extremely difficult to poach ANTA's core leaders, as what binds them is not only compensation, but predictable advancement and holistic life support.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Talent Development</strong></td>
+                            <td><em>"High-Middle-Junior three-tier engine"</em> + <em>"Stars Program."</em> Tailored development paths for different career stages. Campus hires rotate across brands and functions, breaking early specialization. Nearly 40% of graduates from the <em>Olympic Stars Program</em> have advanced into mid-to-senior management roles.</td>
+                            <td>Global standardized training and leadership development programs. Mature global frameworks emphasize leadership capability and functional excellence within a unified system.</td>
+                            <td><strong>Insight:</strong> Nike needs more <em>China battle-tested</em> acceleration programs. For high-potential talent, Nike could design <em>local critical-role rotations</em> spanning market, supply chain, and digital functions to rapidly produce hybrid leaders.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Incentives & Retention</strong></td>
+                            <td>A <em>36-item welfare system</em> that forms a powerful moat. Benefits include interest-free first-home loans, employee apartments, and children's education support. Investment exceeded RMB 400 million in 2024.</td>
+                            <td>Competitive global compensation and benefits aligned with international standards, enhanced by sports allowances and social impact initiatives.</td>
+                            <td><strong>Challenge:</strong> ANTA's benefits directly address China's core life pressures (housing, children). These are significantly more adhesive than salary alone. Nike's global benefits package requires sharper local adaptation.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Employer Image</strong></td>
+                            <td><em>"A stable, long-term career partner."</em> Emphasizes shared growth and comprehensive security, highly attractive to top local talent seeking steady progression.</td>
+                            <td><em>"A global sports leader and innovator."</em> Naturally appealing to elite talent aspiring to international exposure and innovation-driven culture.</td>
+                            <td><strong>Insight:</strong> Nike should amplify the narrative of <em>"Defining the future from China."</em> Position China not merely as an execution hub, but as an innovation origin influencing global products.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Core Distinction:</strong> ANTA is a <strong>system-driven ecosystem builder</strong>, while Nike is a <strong>brand-driven innovation leader</strong>. ANTA secures its talent foundation through internal cultivation and deep welfare integration; Nike attracts elite talent through global brand equity and innovation culture.</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">Talent Acquisition Strategy for Nike</h3>
+                <p><strong>Challenge:</strong> ANTA has cultivated a cohort of highly loyal mid-to-senior leaders fluent in complex multi-brand operations. They are deeply embedded and resistant to conventional role- or pay-based poaching.</p>
+                <p><strong>Acquisition Strategy:</strong></p>
+                <ul>
+                    <li><strong>Target:</strong> Select individuals within premium brands (e.g., Arc'teryx, DESCENTE) who possess international exposure or aspire to a broader innovation platform.</li>
+                    <li><strong>Value Proposition:</strong> Offer a leap from <em>operating a successful brand</em> to <em>shaping the future of global sport</em>. Leverage Nike's frontier technology initiatives and unmatched global influence to attract those who feel constrained by systemic rigidity and seek larger, more ambitious challenges.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 模块 4: adidas vs Nike -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">2. adidas vs. Nike: Cultural Belonging vs. Elite Performance Orientation</div>
+                <p>adidas has cultivated a strong sense of local belonging by creating best-in-class office environments and an inclusive culture. Its talent strategy is designed to attract and retain professionals who are willing to grow and strive within a structured system.</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Dimension</th>
+                            <th>adidas</th>
+                            <th>Nike</th>
+                            <th>Implications and Challenges for Nike</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Strategic Core</strong></td>
+                            <td><em>"Homecourt" culture</em> and employee experience. By investing heavily in world-class office environments (e.g., Shanghai HQ), inclusive culture, and rich employee activities, adidas fosters a strong sense of belonging.</td>
+                            <td>Sports-driven spirit and performance orientation. Culture emphasizes competition, breakthrough, and winning, with a stronger elite mindset and results pressure.</td>
+                            <td><strong>Challenge:</strong> adidas offers a more comfortable, supportive day-to-day work experience. When competing for similarly capable professional managers, this becomes a critical soft differentiator.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organizational Climate</strong></td>
+                            <td>Emphasis on diversity, inclusion, and teamwork. Global Inclusion Weeks and similar initiatives create an open, fair environment that encourages diversity of thought.</td>
+                            <td>Emphasis on competition, excellence, and individual breakthroughs. The culture is more aggressive, with a tendency toward individual heroism, generating higher internal tension.</td>
+                            <td><strong>Insight:</strong> While maintaining a "win" culture, Nike needs to place greater emphasis on team collaboration and sustainable growth. adidas's internal community-building practices offer useful reference points.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Talent Attraction</strong></td>
+                            <td><em>"Top Employer"</em> branding with strong localization commitment. Repeatedly recognized as a "China Top Employer," signaling long-term investment in the China market and appealing to candidates seeking a stable global platform.</td>
+                            <td>The halo of a <em>global innovation benchmark</em>. Exceptionally attractive to top-tier design, marketing, and product innovation talent—symbolizing the pinnacle of the industry.</td>
+                            <td><strong>Challenge:</strong> In non-elite creative roles (e.g., retail operations, regional management), adidas's employer awards and superior work experience offer broader appeal.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Career Pathways</strong></td>
+                            <td>Structured and visible career development tracks. Clear promotion pathways and strong training support enable long-term internal growth.</td>
+                            <td><em>Fast-track programs</em> and global opportunities. High performers may advance rapidly or rotate internationally, offering steep but uncertain growth trajectories.</td>
+                            <td><strong>Insight:</strong> Nike should design more visible and stable medium-to-long-term career roadmaps for China-based talent, clarifying milestones toward senior local leadership roles to reduce attrition driven by uncertainty.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Core Distinction:</strong> adidas is a <strong>model student of localization</strong>, while Nike is a <strong>global leader</strong>. adidas seeks deep integration into China; Nike seeks to lead China.</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">Talent Acquisition Strategy for Nike</h3>
+                <p><strong>Challenge:</strong> In functions such as retail management, supply chain, and local marketing, adidas offers a platform comparable to Nike's—but with a gentler culture and clearer, more predictable career paths.</p>
+                <p><strong>Acquisition Strategy:</strong></p>
+                <ul>
+                    <li><strong>Target:</strong> Frontline retail trainers, regional retail managers, and senior designers and product marketers from the Shanghai design center.</li>
+                    <li><strong>Value Proposition:</strong> For talent seeking <em>faster breakthroughs</em> and <em>higher innovation ceilings</em>, emphasize Nike's culture of challenging conventions and steeper growth curves—backed by more demanding, high-impact projects and greater creative latitude.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 模块 5: LI-NING vs Nike -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">3. LI-NING vs. Nike: Agility and Flexibility vs. Systemic Standardization</div>
+                <p>LI-NING represents the most agile and execution-driven organizational archetype among China's domestic sportswear brands. Its talent strategy is explicitly designed to support rapid decision-making, high-frequency iteration, and immediate market responsiveness.</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Dimension</th>
+                            <th>LI-NING</th>
+                            <th>Nike</th>
+                            <th>Implications and Challenges for Nike</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Strategic Core</strong></td>
+                            <td>Extreme pragmatism and speed. Business decisions prioritize short feedback loops and quick validation, enabling fast adaptation to market signals.</td>
+                            <td>Long-cycle global planning. Strategy is formulated through multilayered global processes, ensuring consistency but reducing responsiveness.</td>
+                            <td><strong>Challenge:</strong> Nike's decision-making cadence often lags behind fast-moving local trends. Against LI-NING, speed itself becomes a competitive disadvantage.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organizational Structure</strong></td>
+                            <td>Highly flattened. Clear accountability, minimal hierarchy, and strong empowerment of frontline teams.</td>
+                            <td>Matrix-based global organization. Multiple reporting lines and approval layers ensure alignment but increase friction.</td>
+                            <td><strong>Insight:</strong> Nike could pilot <em>"China rapid-response squads"</em> with simplified approval mechanisms for selected categories or channels.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Incentive Mechanisms</strong></td>
+                            <td>Strong performance linkage. Bonuses and promotions are tightly coupled with short-term business outcomes, creating a high-pressure, high-reward environment.</td>
+                            <td>Balanced incentive design. Performance is evaluated through a mix of financial results, leadership behaviors, and long-term impact.</td>
+                            <td><strong>Challenge:</strong> For execution-oriented talent, Nike's incentive feedback may feel distant or abstract compared with LI-NING's immediate rewards.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Talent Attraction</strong></td>
+                            <td>Appeals to <em>doers</em> and <em>operators</em>. Highly attractive to individuals who value autonomy, speed, and tangible results over process sophistication.</td>
+                            <td>Appeals to <em>strategists</em> and <em>innovators</em>. Strong draw for talent seeking structured development and global exposure.</td>
+                            <td><strong>Insight:</strong> Nike should differentiate its EVP by clearly signaling which roles offer true end-to-end ownership and rapid decision authority.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Core Distinction:</strong> LI-NING is a <strong>battlefield organization</strong>, optimized for speed and execution; Nike is a <strong>system organization</strong>, optimized for scale, consistency, and long-term brand leadership.</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">Talent Acquisition Strategy for Nike</h3>
+                <p><strong>Challenge:</strong> Execution-focused professionals may perceive Nike as slow-moving, overly process-heavy, and distant from frontline business impact.</p>
+                <p><strong>Acquisition Strategy:</strong></p>
+                <ul>
+                    <li><strong>Target:</strong> High-performing category managers, channel operators, and growth marketers who have proven their ability to scale success beyond rapid wins.</li>
+                    <li><strong>Value Proposition:</strong> Position Nike as the platform where <em>battle-hardened executors</em> can elevate into <em>system builders</em>—moving from short-term victories to shaping enduring brands and categories at scale.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 模块 6: On vs Nike -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">4. On vs. Nike: Belief-Driven Organization vs. System-Driven Organization</div>
+                <p>On represents a new-generation sportswear brand whose talent strategy is built almost entirely on <strong>professional belief and product conviction</strong>. Compared with traditional giants, its organizational model is deliberately minimalist, relying on shared values rather than institutional density.</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Dimension</th>
+                            <th>On</th>
+                            <th>Nike</th>
+                            <th>Implications and Challenges for Nike</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Strategic Core</strong></td>
+                            <td>Product belief and mission alignment. Talent is attracted primarily by faith in the product, technology, and brand vision rather than scale or stability.</td>
+                            <td>Institutional excellence and global leadership. Talent is attracted by systems, resources, and global influence.</td>
+                            <td><strong>Challenge:</strong> On competes for the same top-tier product and innovation talent, but with a radically different emotional proposition—<em>belief over structure</em>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organizational Structure</strong></td>
+                            <td>Ultra-flat and founder-influenced. Decision-making is highly concentrated among senior product and brand leaders.</td>
+                            <td>Multi-layered global matrix. Decisions balance global alignment and local execution.</td>
+                            <td><strong>Insight:</strong> Nike's layered structure may dilute product passion. Creating <em>small, founder-like teams</em> within Nike could restore emotional ownership.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Talent Motivation</strong></td>
+                            <td>Intrinsic motivation dominates. Individuals are driven by craftsmanship, innovation, and the desire to build something meaningful from the ground up.</td>
+                            <td>Extrinsic and intrinsic motivations coexist. Compensation, brand prestige, and innovation opportunities are balanced.</td>
+                            <td><strong>Challenge:</strong> For true believers, Nike's scale may feel impersonal; passion risks being diluted by process.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Employer Appeal</strong></td>
+                            <td>A <em>cult-like</em> attraction among elite product innovators. On is perceived as authentic, pure, and uncompromised.</td>
+                            <td>A <em>benchmark platform</em> for industry excellence. Nike represents the pinnacle of professional achievement.</td>
+                            <td><strong>Insight:</strong> Nike must articulate how scale and belief can coexist—<em>innovation with impact</em>, not innovation diluted.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Core Distinction:</strong> On is a <strong>belief-centric organization</strong>—small, focused, and conviction-driven. Nike is a <strong>system-centric organization</strong>—powerful, scalable, and institutionally robust.</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">Talent Acquisition Strategy for Nike</h3>
+                <p><strong>Challenge:</strong> Nike risks losing elite product innovators who seek purity, autonomy, and deep emotional connection to the product.</p>
+                <p><strong>Acquisition Strategy:</strong></p>
+                <ul>
+                    <li><strong>Target:</strong> Senior designers, advanced materials experts, and category innovation leaders who desire scale without surrendering belief.</li>
+                    <li><strong>Value Proposition:</strong> Offer <em>belief at scale</em>—the chance to turn conviction into global impact, supported by unmatched R&D, athlete insight, and platform power.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 模块 7: Xtep vs Nike -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">5. Xtep vs. Nike: Vertical Specialization vs. Horizontal Expansion</div>
+                <p>Xtep has deliberately chosen a <strong>highly focused vertical strategy</strong>, anchoring itself firmly in the running category. Its talent strategy, organizational design, and resource allocation all serve a single objective: becoming the most professional and credible running brand in China.</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Dimension</th>
+                            <th>Xtep</th>
+                            <th>Nike</th>
+                            <th>Implications and Challenges for Nike</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Strategic Core</strong></td>
+                            <td>Extreme category focus. All major decisions revolve around running—products, athletes, events, and communities.</td>
+                            <td>Multi-category global leadership. Nike competes across a broad portfolio including running, basketball, football, training, and lifestyle.</td>
+                            <td><strong>Challenge:</strong> Xtep's singular focus enables deeper expertise and faster accumulation of category authority, particularly in China's mass and semi-professional running segments.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organizational Model</strong></td>
+                            <td>Category-centric vertical integration. Product, marketing, athlete relations, and community operations are tightly aligned around running.</td>
+                            <td>Matrix-based category management. Categories compete for resources within a global structure.</td>
+                            <td><strong>Insight:</strong> Nike could further empower category-specific China teams with end-to-end ownership to counter Xtep's depth advantage.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Talent Specialization</strong></td>
+                            <td>Deep cultivation of running specialists. Long-term accumulation of know-how across footwear biomechanics, runner communities, and race ecosystems.</td>
+                            <td>Broad-based professional development. Talent is often rotated across categories and functions.</td>
+                            <td><strong>Challenge:</strong> Nike's rotation system may dilute category depth for highly specialized professionals.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Employer Appeal</strong></td>
+                            <td><em>"The home of runners."</em> Strong emotional resonance with running professionals and enthusiasts.</td>
+                            <td><em>"The ultimate sports platform."</em> Appeals to multi-sport and cross-category talent.</td>
+                            <td><strong>Insight:</strong> For pure running experts, Nike must clarify why a broader platform still offers the deepest running impact.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Core Distinction:</strong> Xtep is a <strong>category monolith</strong>, building unassailable depth in one vertical. Nike is a <strong>category orchestrator</strong>, leveraging scale across multiple sports.</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">Talent Acquisition Strategy for Nike</h3>
+                <p><strong>Challenge:</strong> Nike risks being perceived as <em>too broad</em> for specialists who seek deep category immersion and visible authority within a single sport.</p>
+                <p><strong>Acquisition Strategy:</strong></p>
+                <ul>
+                    <li><strong>Target:</strong> Senior running footwear designers, performance marketers, and athlete managers seeking global reach beyond China.</li>
+                    <li><strong>Value Proposition:</strong> Position Nike as the platform where <em>deep specialization</em> meets <em>global amplification</em>—allowing running experts to influence not just one market, but the future of running worldwide.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 模块 8: PEAK vs Nike -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">6. PEAK vs. Nike: Efficiency-First Orientation vs. Long-Termism</div>
+                <p>PEAK has, in recent years, undergone a strategic recalibration toward <strong>efficiency, cost discipline, and focused returns</strong>. Its talent strategy reflects this shift, emphasizing operational effectiveness over expansive organizational ambition.</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Dimension</th>
+                            <th>PEAK</th>
+                            <th>Nike</th>
+                            <th>Implications and Challenges for Nike</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Strategic Core</strong></td>
+                            <td>Efficiency and cost control. Business decisions prioritize ROI, operational leverage, and disciplined resource allocation.</td>
+                            <td>Long-term brand investment and category leadership. Strategic patience underpins innovation and global influence.</td>
+                            <td><strong>Insight:</strong> PEAK's strategy reduces complexity and stabilizes margins, but limits its ability to attract top-tier visionary talent.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organizational Ambition</strong></td>
+                            <td>Selective contraction and focus. Non-core initiatives are streamlined or exited to preserve efficiency.</td>
+                            <td>Continuous expansion and reinvention. Nike sustains long-term bets across innovation, sustainability, and digital transformation.</td>
+                            <td><strong>Challenge:</strong> Nike's long-term investments demand patience from talent; PEAK's shorter cycles appeal to pragmatists.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Talent Philosophy</strong></td>
+                            <td>Utility-driven. Talent is valued primarily for immediate operational contribution.</td>
+                            <td>Potential-driven. Talent is cultivated for future leadership and innovation impact.</td>
+                            <td><strong>Insight:</strong> Nike should clearly differentiate roles that require visionary capacity from those that reward operational excellence.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Employer Appeal</strong></td>
+                            <td>Stability, predictability, and clear expectations. Appeals to professionals seeking clarity and work discipline.</td>
+                            <td>Purpose, ambition, and global scale. Appeals to individuals seeking long-term impact and industry leadership.</td>
+                            <td><strong>Challenge:</strong> PEAK may become a talent reservoir for Nike in operationally mature roles.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Core Distinction:</strong> PEAK is an <strong>efficiency optimizer</strong>, prioritizing discipline and focus. Nike is a <strong>long-term value architect</strong>, prioritizing endurance, innovation, and brand legacy.</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">Talent Acquisition Strategy for Nike</h3>
+                <p><strong>Challenge:</strong> While PEAK is unlikely to compete with Nike for top innovation talent, its recent organizational tightening may release capable operational leaders into the market.</p>
+                <p><strong>Acquisition Strategy:</strong></p>
+                <ul>
+                    <li><strong>Target:</strong> Supply chain leaders, manufacturing optimization experts, and cost-control specialists seeking a broader strategic canvas.</li>
+                    <li><strong>Value Proposition:</strong> Offer a transition from <em>efficiency execution</em> to <em>value creation at scale</em>, enabling operational experts to contribute to long-term brand and innovation strategies.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 模块 9: Core Talent Trends & Nike's Critical Gaps -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">Core Talent Trends & Nike's Critical Gaps</div>
+                
+                <p>Based on the brand benchmarking above, talent competition in the 2025 China market exhibits three definitive trends. These trends define the capability gaps Nike must address.</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">Trend 1: From "Employer Brand" to "Team Model" & "Manager Reputation"</h3>
+                <p>Top talent is now choosing a specific <strong>"team atmosphere," "level of empowerment," and "quality of their manager"</strong> rather than just a corporate brand.</p>
+                <p><strong>Nike's Gap:</strong> The globally standardized management system may lead to insufficient innovation flexibility and decision-making authority at the front-line team level, weakening its appeal to top hands-on experts.</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">Trend 2: Shift from "Commercial Generalists" to "Vertical Specialists"</h3>
+                <p>Market growth relies on segmented tracks (running, outdoor, yoga). Brands need <strong>"running product experts," "outdoor community operators," "yoga category leads"</strong>—not just marketing and sales generalists.</p>
+                <p><strong>Nike's Gap:</strong> The organization is better at cultivating and attracting "generalist" commercial leaders. It may be surpassed by focused brands like On and XTEP in terms of deep understanding and resource network accumulation in specific sports.</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">Trend 3: From Compensation to "Value Alignment" & "Growth Experience"</h3>
+                <p>Talent particularly cares about: Can my work directly influence the product? Is my professional opinion respected? Can I achieve extraordinary growth alongside the business?</p>
+                <p><strong>Nike's Gap:</strong> Needs to create a clearer, deliverable "impacting the globe" pathway and experience for local Chinese talent, converting brand potential into personal growth momentum.</p>
+            </div>
+        </div>
+        
+        <!-- 模块 10: Action Plan -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">Layered Talent Strategy Action Plan for Nike China</div>
+                
+                <p>The core principle for action: <strong>Not simply imitating competitors, but designing a more attractive "way of working" targeting the deep-seated needs of desired talent.</strong></p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">1. Immediate Actions (Next 6 Months): Precision Countermeasures, Addressing Pain Points</h3>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">Establish a "Local Innovation Black Belt" Job Sequence</h4>
+                <ul>
+                    <li><strong>Action:</strong> In core categories like running, training, and outdoor, establish "Black Belt Expert" roles independent of traditional job grades. Recruit globally with compensation benchmarked against market top levels.</li>
+                    <li><strong>Empowerment:</strong> Grant them significant influence in product definition suggestions and independent budgets for localization innovation experiments.</li>
+                    <li><strong>Goal:</strong> Directly recruit top specialists from On, HOKA, Salomon, or top-tier sports institutions to rapidly strengthen vertical depth.</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">Launch the "Channel Commander" Program</h4>
+                <ul>
+                    <li><strong>Action:</strong> Recruit hands-on experts proficient in omni-channel retail (content, livestreaming, private traffic, offline integration) from Alibaba, Douyin, Xiaohongshu, and emerging DTC brands.</li>
+                    <li><strong>Deployment:</strong> Form cross-departmental "New Retail Strike Teams" reporting directly to China leadership, responsible for breaking through key operational links.</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">Introduce a "Key Talent Retention Dialogue" Mechanism</h4>
+                <ul>
+                    <li><strong>Action:</strong> HRBPs and business leaders must hold informal quarterly dialogues with core talent, focusing on one question: <strong>"What obstacles do we need to remove for you to achieve greater success at Nike?"</strong></li>
+                    <li><strong>Goal:</strong> Proactive retention, personalized resolution of talent pain points (e.g., redundant processes, insufficient empowerment).</li>
+                </ul>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">2. System Building Initiatives (6-18 Months): Solidifying Foundations, Building Systems</h3>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">Build the "China Innovation Lab"</h4>
+                <ul>
+                    <li><strong>Model:</strong> Operate as an independent Business Unit (BU) with its own product development, marketing, and financial accounting authority.</li>
+                    <li><strong>Mission:</strong> Focus on exploring product lines and business models serving the China market (e.g., light-functional series for urban outdoor scenarios).</li>
+                    <li><strong>Value:</strong> This is the ultimate "special zone" for attracting and retaining top innovative talent. It demonstrates Nike's willingness to conduct fundamental innovation for China.</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">Upgrade the "Retail Leadership Accelerator"</h4>
+                <ul>
+                    <li><strong>Benchmark:</strong> Learn from the accelerated logic of Adidas's "Retail Elite Program," but infuse it with Nike's sports DNA.</li>
+                    <li><strong>Design:</strong> Compress the 24-month training period into "6 months HQ rotation + 12 months in-store practical experience + 6 months leading a project."</li>
+                    <li><strong>Output:</strong> Aim to cultivate store managers who understand both brand and business and can lead future smart stores. This is key to countering Adidas's systematic retail talent output.</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">Construct a "Category Expert Certification System"</h4>
+                <ul>
+                    <li><strong>Design:</strong> Collaborate with global sports science teams to design professional certification courses for core China market categories like running, basketball, and soccer.</li>
+                    <li><strong>Mandate:</strong> Require relevant product, marketing, and sales employees to obtain corresponding category certifications as a prerequisite for promotion.</li>
+                    <li><strong>Purpose:</strong> Systematically elevate the organization's professional authority in vertical fields, forming an internal knowledge barrier.</li>
+                </ul>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">3. Long-Term Culture Shaping (18+ Months): Resetting Mindsets, Winning the Future</h3>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">Refresh the Local Employer Value Proposition (EVP): "In China, Drive Nike's Future"</h4>
+                <ul>
+                    <li><strong>Narrative:</strong> Center all employer brand communication around "How China insights influence global products" and "How the China team leads new business models."</li>
+                    <li><strong>Case Studies:</strong> Annually spotlight 1-2 successful innovation cases (product, marketing, channel) led by the China team on global internal platforms.</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">Implement "Global-China" Talent Exchange 2.0</h4>
+                <ul>
+                    <li><strong>Upgrade:</strong> Evolve the existing rotation program into an exchange where <strong>"key roles back each other up."</strong></li>
+                    <li><strong>Example:</strong> China's Running Category Director could take a role in the HQ Global Running department, while the corresponding HQ expert comes to China for deep market immersion. The goal is to build deep mutual trust and consensus, truly closing the decision-making loop.</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">Institutionalize Executive Team "Deep Dive" Immersion</h4>
+                <ul>
+                    <li><strong>Requirement:</strong> China leadership team must have one "Store Day" or "Community Day" per month (with consumers, store staff, running clubs).</li>
+                    <li><strong>Purpose:</strong> Ensure top decision-makers continually sense the real market temperature, preventing strategy-execution disconnect.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 模块 11: Conclusion -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">Conclusion: The Decisive Point Lies in Organizational Restructuring</div>
+                
+                <p>Competitors have already built unique talent attraction and retention systems around their respective strategies. Nike's advantage lies in its unparalleled brand, resources, and scale. The task now is not to dismantle competitors' systems, but to <strong>leverage its own scale to incubate one or even multiple "new organizational modules" within the China market that can rival the most appealing traits of its competitors.</strong></p>
+                
+                <p>The key to action is not fine-tuning HR policies, but a <strong>profound experiment in organizational empowerment.</strong> Success will first be reflected in whether, over the next 12-18 months, Nike can attract the top "mavericks" and "specialists" who previously would never have considered joining a large corporation.</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">Winning the Talent War Requires an "Inside-Out" Revolution</h3>
+                
+                <p>The current market race no longer ends with a single product or marketing victory, but with victory in <strong>"organizational models."</strong></p>
+                
+                <p>Anta has proven the enduring stamina of systematic cultivation, Adidas has demonstrated the cohesive power of localized belonging, and On has illustrated the pure appeal of professional belief. For Nike, the real challenge is not poaching a few individuals from them, but whether it can undergo a profound, inside-out organizational revolution.</p>
+                
+                <p>The essence of this revolution is: <strong>Perfectly integrating the grand vision of a global brand with the agility, depth, and warmth required by the China market.</strong></p>
+                
+                <p>The proposed action plan is the beginning of this revolution. Its success will be marked by very specific signs: In the coming year, can Nike attract "mavericks" from internet platforms or niche top brands who have previously rejected large companies? Can it successfully retain the local mid-level leaders favored by competitors, who understand both business and sport?</p>
+                
+                <p>This is not merely an adjustment of human resources strategy, but a reshaping of strategic core capabilities. Action must begin immediately.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 中文内容区域 -->
+    <div class="container lang-content" id="zh-content">
+        <!-- 模块 1: 执行摘要 -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">执行摘要</div>
+                <p>2025年，中国运动户外市场的竞争已发生根本性演变——从营销和渠道的争夺，转变为<strong>组织能力与人才模式</strong>的决战。本报告深度分析了七大核心竞争者在人才战略上的根本差异：</p>
+                <ul>
+                    <li><strong>安踏</strong>构建了高度防御性、难以复制的<em>"共生型"人才系统</em>。通过内部培养和深度嵌入的福利机制，建立了异常稳固的人才基础。</li>
+                    <li><strong>阿迪达斯</strong>通过其<em>"主场"文化</em>创造卓越的员工体验，并通过加速发展项目强化零售人才梯队，从而深化本地根基。</li>
+                    <li><strong>李宁</strong>展现出极致的商业敏捷性，利用高度灵活的激励机制和扁平决策结构，吸引执行导向、结果驱动的人才。</li>
+                    <li><strong>On等新兴品牌</strong>通过纯粹的职业信念和超扁平组织结构，分流顶级的<em>"产品信徒"</em>创新者。</li>
+                    <li><strong>特步</strong>垂直深耕跑步品类，其基于生态系统的方法在高度专业化人才中创造了独特的凝聚力。</li>
+                    <li><strong>匹克</strong>近期的战略调整反映了效率优先的思维；由此带来的人才流动可能在特定职能领域创造选择性招聘机会。</li>
+                </ul>
+                <p>对于<strong>耐克</strong>，核心挑战明确：其全球标准化体系在应对本地敏捷性需求、深化品类专业化、以及满足人才新期望（即<strong>价值契合</strong>和<strong>加速成长</strong>）方面日益不足。</p>
+                <p>为此，本报告提出<strong>"探路者计划"</strong>，建议耐克立即通过三阶段方法启动由内而外的组织转型：</p>
+                <ol>
+                    <li>建立关键专家角色</li>
+                    <li>创建创新特区</li>
+                    <li>重构雇主叙事</li>
+                </ol>
+                <p>目标是在未来五年的人才战中取得决定性胜利。</p>
+            </div>
+        </div>
+        
+        <!-- 模块 2: 核心结论 -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">核心结论</div>
+                <p>当前竞争格局本质上是<strong>组织模式</strong>的终极较量。</p>
+                <ul>
+                    <li><strong>安踏</strong>通过系统培育<em>"内部人"</em>。</li>
+                    <li><strong>阿迪达斯</strong>通过文化凝聚<em>"奋斗者"</em>。</li>
+                    <li><strong>On</strong>通过信念吸引<em>"信徒"</em>。</li>
+                </ul>
+                <p>耐克必须解决<em>"全球标准"</em>与<em>"本地敏捷性"</em>之间的内在矛盾。答案<strong>并非</strong>简单挖角，而是为目标人才群体精心设计更具吸引力的<strong>新型工作模式</strong>。</p>
+            </div>
+        </div>
+        
+        <!-- 模块 3: 安踏 vs. 耐克 -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">1. 安踏 vs. 耐克：系统共生 vs. 品牌光环</div>
+                <p>安踏构建了一个极难复制的内部生成人才体系。其核心不是通过高薪进行激进的外部招聘，而是长达十年周期、注入<em>"安踏DNA"</em>的骨干人才培养。</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th>安踏集团</th>
+                            <th>耐克</th>
+                            <th>对耐克的启示与挑战</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>战略核心</strong></td>
+                            <td><em>"共生价值"</em>体系。员工被视为长期业务伙伴。通过超长期投资，安踏将个人职业轨迹与企业成长对齐，随时间产生共鸣。</td>
+                            <td>以DEI（多元、公平、包容）为基础的品牌驱动吸引力。利用全球品牌影响力和包容性价值观吸引全球人才。</td>
+                            <td><strong>挑战：</strong>安踏的体系培育了高度忠诚的中层管理者。耐克极难挖走安踏的核心领导者，因为绑定他们的不仅是薪酬，更是可预期的晋升和全面的生活支持。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>人才培养</strong></td>
+                            <td><em>"高-中-基三层引擎"</em> + <em>"星计划"</em>。为不同职业阶段定制发展路径。校园招聘在各品牌和职能间轮岗，打破早期专业化。<em>"奥运星计划"</em>近40%的毕业生已晋升至中高层管理岗位。</td>
+                            <td>全球标准化培训与领导力发展项目。成熟的全球框架在统一体系内强调领导能力和职能卓越。</td>
+                            <td><strong>启示：</strong>耐克需要更多<em>"中国战场验证"</em>的加速项目。针对高潜力人才，耐克可设计跨越市场、供应链和数字化职能的<em>"本地关键岗位轮岗"</em>，快速培养混合型领导者。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>激励与保留</strong></td>
+                            <td><em>36项福利体系</em>构成强大护城河。福利包括无息首套房贷款、员工公寓、子女教育支持。2024年投资超4亿元人民币。</td>
+                            <td>具有国际标准的竞争性全球薪酬福利，辅以运动津贴和社会影响计划。</td>
+                            <td><strong>挑战：</strong>安踏的福利直击中国核心生活压力（住房、子女）。这些比单纯薪资更具粘性。耐克的全球福利方案需要更敏锐的本地化适配。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>雇主形象</strong></td>
+                            <td><em>"稳定、长期的职业伙伴。"</em>强调共同成长与全面保障，对追求稳定发展的顶尖本地人才极具吸引力。</td>
+                            <td><em>"全球运动领导者和创新者。"</em>天然吸引渴望国际视野和创新驱动文化的精英人才。</td>
+                            <td><strong>启示：</strong>耐克应强化<em>"从中国定义未来"</em>的叙事。将中国定位不仅是执行中心，更是影响全球产品的创新源头。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>核心区别：</strong>安踏是<strong>系统驱动的生态构建者</strong>，而耐克是<strong>品牌驱动的创新领导者</strong>。安踏通过内部培养和深度福利整合巩固人才基础；耐克通过全球品牌资产和创新文化吸引精英人才。</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">耐克的人才获取策略</h3>
+                <p><strong>挑战：</strong>安踏培养了一批高度忠诚、精通复杂多品牌运营的中高层领导者。他们深度嵌入体系，对传统的基于职位或薪酬的挖角具有抵抗力。</p>
+                <p><strong>获取策略：</strong></p>
+                <ul>
+                    <li><strong>目标：</strong>选择高端品牌（如Arc'teryx、DESCENTE）中具备国际视野或渴望更广阔创新平台的个人。</li>
+                    <li><strong>价值主张：</strong>提供从<em>运营成功品牌</em>到<em>塑造全球运动未来</em>的飞跃。利用耐克的前沿技术举措和无与伦比的全球影响力，吸引那些感到体系僵化、寻求更大、更具挑战性任务的人才。</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 模块 4: 阿迪达斯 vs. 耐克 -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">2. 阿迪达斯 vs. 耐克：文化归属 vs. 精英绩效导向</div>
+                <p>阿迪达斯通过打造一流的办公环境和包容性文化，培养了强烈的本地归属感。其人才策略旨在吸引并保留那些愿意在结构化体系中成长和奋斗的专业人士。</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th>阿迪达斯</th>
+                            <th>耐克</th>
+                            <th>对耐克的启示与挑战</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>战略核心</strong></td>
+                            <td><em>"主场"文化</em>与员工体验。通过大力投资世界级办公环境（如上海总部）、包容性文化和丰富的员工活动，阿迪达斯培养了强烈的归属感。</td>
+                            <td>运动驱动的精神与绩效导向。文化强调竞争、突破和胜利，具有更强的精英心态和结果压力。</td>
+                            <td><strong>挑战：</strong>阿迪达斯提供了更舒适、支持性的日常工作体验。在争夺能力相当的专业经理人时，这成为关键的软性差异化因素。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>组织氛围</strong></td>
+                            <td>强调多元、包容和团队合作。全球包容周等倡议营造了开放、公平的环境，鼓励思想多样性。</td>
+                            <td>强调竞争、卓越和个人突破。文化更具侵略性，倾向于个人英雄主义，产生更高的内部张力。</td>
+                            <td><strong>启示：</strong>在保持"赢"文化的同时，耐克需要更加强调团队协作和可持续增长。阿迪达斯内部社区建设的实践提供了有用的参考点。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>人才吸引</strong></td>
+                            <td><em>"最佳雇主"</em>品牌与强大的本地化承诺。多次获评"中国最佳雇主"，表明对中国市场的长期投入，吸引寻求稳定全球平台的候选人。</td>
+                            <td><em>全球创新标杆</em>的光环。对顶级设计、营销和产品创新人才极具吸引力——象征着行业的巅峰。</td>
+                            <td><strong>挑战：</strong>在非精英创意角色（如零售运营、区域管理）中，阿迪达斯的雇主奖项和优越的工作体验提供了更广泛的吸引力。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>职业路径</strong></td>
+                            <td>结构化、可见的职业发展路径。清晰的晋升通道和强大的培训支持，实现长期内部成长。</td>
+                            <td><em>快速通道项目</em>和全球机会。高绩效者可能快速晋升或国际轮岗，提供陡峭但不确定的成长轨迹。</td>
+                            <td><strong>启示：</strong>耐克应为中国本土人才设计更可见、稳定的中长期职业路线图，明确迈向高级本地领导角色的里程碑，以减少因不确定性导致的流失。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>核心区别：</strong>阿迪达斯是<strong>本地化的模范生</strong>，而耐克是<strong>全球领导者</strong>。阿迪达斯寻求深度融入中国；耐克寻求引领中国。</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">耐克的人才获取策略</h3>
+                <p><strong>挑战：</strong>在零售管理、供应链和本地营销等职能上，阿迪达斯提供了与耐克相当的平台——但文化更温和，职业路径更清晰、更可预测。</p>
+                <p><strong>获取策略：</strong></p>
+                <ul>
+                    <li><strong>目标：</strong>一线零售培训师、区域零售经理，以及上海设计中心的高级设计师和产品营销人员。</li>
+                    <li><strong>价值主张：</strong>对于寻求<em>更快突破</em>和<em>更高创新天花板</em>的人才，强调耐克挑战常规的文化和更陡峭的成长曲线——辅以更具挑战性、高影响力的项目和更大的创作自由度。</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 模块 5: 李宁 vs. 耐克 -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">3. 李宁 vs. 耐克：敏捷灵活 vs. 系统标准化</div>
+                <p>李宁代表了中国本土运动品牌中最敏捷、执行驱动的组织原型。其人才战略明确设计为支持快速决策、高频迭代和即时市场响应。</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th>李宁</th>
+                            <th>耐克</th>
+                            <th>对耐克的启示与挑战</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>战略核心</strong></td>
+                            <td>极致的务实与速度。业务决策优先短反馈循环和快速验证，实现快速适应市场信号。</td>
+                            <td>长周期全球规划。战略通过多层全球流程制定，确保一致性但降低响应速度。</td>
+                            <td><strong>挑战：</strong>耐克的决策节奏常落后于快速变化的本地趋势。与李宁相比，速度本身成为竞争劣势。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>组织结构</strong></td>
+                            <td>高度扁平化。权责清晰、层级极简、前线团队高度授权。</td>
+                            <td>矩阵式全球组织。多重汇报线和审批层级确保对齐但增加摩擦。</td>
+                            <td><strong>启示：</strong>耐克可试点<em>"中国快速响应小队"</em>，为选定品类或渠道简化审批机制。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>激励机制</strong></td>
+                            <td>强绩效挂钩。奖金和晋升与短期业务成果紧密绑定，创造高压、高回报环境。</td>
+                            <td>平衡的激励设计。绩效通过财务结果、领导行为与长期影响的混合评估。</td>
+                            <td><strong>挑战：</strong>对于执行导向的人才，相比李宁的即时奖励，耐克的激励反馈可能显得遥远或抽象。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>人才吸引</strong></td>
+                            <td>吸引<em>"实干者"</em>和<em>"运营者"</em>。对重视自主权、速度和可量化成果而非流程复杂度的个人极具吸引力。</td>
+                            <td>吸引<em>"战略家"</em>和<em>"创新者"</em>。强烈吸引寻求结构化发展和全球视野的人才。</td>
+                            <td><strong>启示：</strong>耐克应通过明确标示哪些角色提供真正的端到端所有权和快速决策权，来差异化其EVP。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>核心区别：</strong>李宁是<strong>战场型组织</strong>，为速度和执行优化；耐克是<strong>系统型组织</strong>，为规模、一致性和长期品牌领导力优化。</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">耐克的人才获取策略</h3>
+                <p><strong>挑战：</strong>关注执行的职业人士可能认为耐克行动缓慢、流程繁琐，且远离前线业务影响。</p>
+                <p><strong>获取策略：</strong></p>
+                <ul>
+                    <li><strong>目标：</strong>高绩效的品类经理、渠道运营者和增长营销人员，这些人已证明能将成功从快速胜利扩展到更大规模。</li>
+                    <li><strong>价值主张：</strong>将耐克定位为<em>"身经百战的执行者"</em>提升为<em>"系统构建者"</em>的平台——从短期胜利转向大规模塑造持久品牌和品类。</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 模块 6: 核心人才趋势与耐克的关键缺口 -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">核心人才趋势与耐克的关键缺口</div>
+                
+                <p>基于以上品牌对标，2025年中国市场的人才竞争呈现出三大明确趋势。这些趋势定义了耐克必须解决的能力缺口。</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">趋势一：从"雇主品牌"到"团队模式"与"经理声誉"</h3>
+                <p>顶尖人才现在选择的是具体的<strong>"团队氛围"、"授权程度"和"经理素质"</strong>，而不仅仅是企业品牌。</p>
+                <p><strong>耐克的缺口：</strong>全球标准化的管理体系可能导致前线团队层面的创新灵活性和决策权不足，削弱其对顶尖实操专家的吸引力。</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">趋势二：从"商业通才"到"垂直专家"</h3>
+                <p>市场增长依赖于细分赛道（跑步、户外、瑜伽）。品牌需要<strong>"跑步产品专家"、"户外社群运营者"、"瑜伽品类负责人"</strong>——而不仅仅是营销和销售通才。</p>
+                <p><strong>耐克的缺口：</strong>该组织更擅长培养和吸引"通才型"商业领导者。在对特定运动的深度理解和资源网络积累方面，可能被On、特步等专注品牌超越。</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">趋势三：从薪酬到"价值契合"与"成长体验"</h3>
+                <p>人才特别关心：我的工作能否直接影响产品？我的专业意见是否被尊重？我能否伴随业务实现非凡成长？</p>
+                <p><strong>耐克的缺口：</strong>需要为中国本土人才创造更清晰、可交付的"影响全球"的路径和体验，将品牌潜力转化为个人成长动能。</p>
+            </div>
+        </div>
+        
+        <!-- 模块 7: 耐克中国分层人才战略行动方案 -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">耐克中国分层人才战略行动方案</div>
+                
+                <p>行动的核心原则：<strong>并非简单模仿竞争对手，而是针对目标人才的深层需求，设计更具吸引力的"工作方式"。</strong></p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">1. 立即行动（未来6个月）：精准对策，解决痛点</h3>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">建立"本地创新黑带"职位序列</h4>
+                <ul>
+                    <li><strong>行动：</strong>在跑步、训练、户外等核心品类中，设立独立于传统职级的"黑带专家"角色。全球招聘，薪酬对标市场顶级水平。</li>
+                    <li><strong>授权：</strong>赋予他们在产品定义建议和本地化创新实验独立预算上的重大影响力。</li>
+                    <li><strong>目标：</strong>直接从On、HOKA、Salomon或顶级体育机构招募顶尖专家，迅速强化垂直深度。</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">启动"渠道指挥官"计划</h4>
+                <ul>
+                    <li><strong>行动：</strong>从阿里巴巴、抖音、小红书及新兴DTC品牌招募精通全渠道零售（内容、直播、私域、线下融合）的实操专家。</li>
+                    <li><strong>部署：</strong>组建跨部门"新零售突击队"，直接向中国领导层汇报，负责突破关键运营环节。</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">引入"关键人才保留对话"机制</h4>
+                <ul>
+                    <li><strong>行动：</strong>HRBP和业务领导必须与核心人才进行季度非正式对话，聚焦一个问题：<strong>"我们需要移除哪些障碍，才能让你在耐克取得更大成功？"</strong></li>
+                    <li><strong>目标：</strong>主动保留，个性化解决人才痛点（如冗余流程、授权不足）。</li>
+                </ul>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">2. 体系建设举措（6-18个月）：夯实基础，构建体系</h3>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">建设"中国创新实验室"</h4>
+                <ul>
+                    <li><strong>模式：</strong>作为独立业务单元（BU）运营，拥有自主的产品开发、营销和财务会计权。</li>
+                    <li><strong>使命：</strong>专注于探索服务于中国市场的产品线和商业模式（如城市户外场景的轻功能系列）。</li>
+                    <li><strong>价值：</strong>这是吸引和保留顶级创新人才的终极"特区"。展现耐克为中国进行根本性创新的意愿。</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">升级"零售领导力加速器"</h4>
+                <ul>
+                    <li><strong>对标：</strong>学习阿迪达斯"零售精英计划"的加速逻辑，但注入耐克的运动DNA。</li>
+                    <li><strong>设计：</strong>将24个月培训期压缩为"6个月总部轮岗 + 12个月门店实战 + 6个月主导项目"。</li>
+                    <li><strong>输出：</strong>旨在培养既懂品牌又懂业务、能领导未来智慧门店的店长。这是对抗阿迪达斯系统性零售人才输出的关键。</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">构建"品类专家认证体系"</h4>
+                <ul>
+                    <li><strong>设计：</strong>与全球运动科学团队合作，为跑步、篮球、足球等中国核心市场品类设计专业认证课程。</li>
+                    <li><strong>强制要求：</strong>要求相关的产品、营销和销售人员获得相应品类认证作为晋升前提。</li>
+                    <li><strong>目的：</strong>系统性提升组织在垂直领域的专业权威，形成内部知识壁垒。</li>
+                </ul>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">3. 长期文化塑造（18个月以上）：重置思维，赢得未来</h3>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">更新本地雇主价值主张（EVP）："在中国，驱动耐克未来"</h4>
+                <ul>
+                    <li><strong>叙事：</strong>将所有雇主品牌沟通围绕"中国洞察如何影响全球产品"和"中国团队如何引领新商业模式"展开。</li>
+                    <li><strong>案例展示：</strong>每年在全球内部平台重点展示1-2个由中国团队主导的成功创新案例（产品、营销、渠道）。</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">实施"全球-中国"人才交流2.0</h4>
+                <ul>
+                    <li><strong>升级：</strong>将现有轮岗项目进化为<strong>"关键角色互为备份"</strong>的交流。</li>
+                    <li><strong>示例：</strong>中国跑步品类总监可到总部全球跑步部门任职，同时相应总部专家来中国进行深度市场沉浸。目标是建立深度互信与共识，真正闭合决策回路。</li>
+                </ul>
+                
+                <h4 style="color: var(--primary-light); margin: 15px 0 10px; font-size: 18px; font-weight: 600;">制度化高管团队"深潜"沉浸</h4>
+                <ul>
+                    <li><strong>要求：</strong>中国领导团队每月必须有一次"门店日"或"社群日"（与消费者、店员、跑团一起）。</li>
+                    <li><strong>目的：</strong>确保最高决策者持续感知真实市场温度，防止战略与执行脱节。</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 模块 8: 总结 -->
+        <div class="module">
+            <div class="module-content">
+                <div class="module-title">总结：决胜点在于组织重构</div>
+                
+                <p>竞争对手已经围绕各自的战略构建了独特的人才吸引和保留体系。耐克的优势在于其无与伦比的品牌、资源和规模。当前任务不是拆解竞争对手的体系，而是<strong>利用自身规模在中国市场内孵化一个甚至多个能与竞争对手最具吸引力特质匹敌的"新组织模块"。</strong></p>
+                
+                <p>行动的关键不是微调人力资源政策，而是<strong>组织赋能的深刻实验。</strong>成功将首先体现在未来12-18个月内，耐克能否吸引那些之前从未考虑加入大公司的顶尖"特立独行者"和"专家"。</p>
+                
+                <h3 style="color: var(--primary-color); margin: 25px 0 15px; font-size: 20px; font-weight: 600;">赢得人才战需要一场"由内而外"的革命</h3>
+                
+                <p>当前市场竞争不再以单一产品或营销胜利告终，而是以<strong>"组织模式"</strong>的胜利结束。</p>
+                
+                <p>安踏证明了系统性培养的持久耐力，阿迪达斯展示了本地化归属的凝聚力，On诠释了专业信念的纯粹吸引力。对耐克而言，真正的挑战不是从他们那里挖走几个人，而是能否经历一场深刻的、由内而外的组织革命。</p>
+                
+                <p>这场革命的本质是：<strong>将全球品牌的宏大愿景与中国市场所需的敏捷性、深度和温度完美融合。</strong></p>
+                
+                <p>提出的行动方案是这场革命的开始。其成功将由非常具体的迹象来标志：未来一年，耐克能否吸引来自互联网平台或小众顶尖品牌、此前拒绝大公司的"特立独行者"？能否成功保留竞争对手青睐的、既懂商业又懂运动的本地中层领导者？</p>
+                
+                <p>这不仅仅是人力资源策略的调整，更是战略核心能力的重塑。行动必须立即开始。</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 页脚 -->
+    <div class="footer">
+        <div class="copyright">©️ marchinarium AI support</div>
+        <div class="timestamp">2025年12月19日</div>
+    </div>
+
+    <!-- ========== JavaScript ========== -->
+    <script>
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== 1. 语言切换功能 =====
+            const languageSelect = document.getElementById('languageSelect');
+            const enContent = document.getElementById('en-content');
+            const zhContent = document.getElementById('zh-content');
+            
+            // 初始化语言
+            const currentLang = localStorage.getItem('preferredLang') || 'en';
+            languageSelect.value = currentLang;
+            switchLanguage(currentLang);
+            
+            // 语言选择器事件监听
+            languageSelect.addEventListener('change', function() {
+                const selectedLang = this.value;
+                localStorage.setItem('preferredLang', selectedLang);
+                switchLanguage(selectedLang);
+            });
+            
+            // 语言切换函数
+            function switchLanguage(lang) {
+                // 隐藏所有内容
+                enContent.classList.remove('active');
+                zhContent.classList.remove('active');
+                
+                // 显示选定语言的内容
+                if (lang === 'en') {
+                    enContent.classList.add('active');
+                    document.title = 'Sportswear Brands Talent Strategy Analysis';
+                } else {
+                    zhContent.classList.add('active');
+                    document.title = '运动品牌人才策略深度对标分析';
+                }
+            }
+            
+            // ===== 2. 深色/浅色模式切换 =====
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('i');
+            
+            // 初始化主题
+            const currentTheme = localStorage.getItem('preferredTheme') || 'light';
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeIcon.className = 'fas fa-sun';
+                themeToggle.title = '切换到浅色模式';
+            } else {
+                document.body.classList.remove('dark-theme');
+                themeIcon.className = 'fas fa-moon';
+                themeToggle.title = '切换到深色模式';
+            }
+            
+            // 主题切换事件监听
+            themeToggle.addEventListener('click', function() {
+                const isDark = document.body.classList.toggle('dark-theme');
+                
+                // 更新图标和提示
+                if (isDark) {
+                    themeIcon.className = 'fas fa-sun';
+                    localStorage.setItem('preferredTheme', 'dark');
+                    themeToggle.title = '切换到浅色模式';
+                } else {
+                    themeIcon.className = 'fas fa-moon';
+                    localStorage.setItem('preferredTheme', 'light');
+                    themeToggle.title = '切换到深色模式';
+                }
+            });
+            
+            // ===== 3. 模块悬停效果增强 =====
+            const modules = document.querySelectorAll('.module');
+            
+            modules.forEach(module => {
+                module.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                module.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            console.log('Page initialized successfully with language and theme support.');
+        });
+    </script>
+</body>
+</html>
