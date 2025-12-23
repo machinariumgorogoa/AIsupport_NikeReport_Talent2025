@@ -1,0 +1,94 @@
+/* ========== CSS变量 - 浅色主题 ========== */
+:root {
+    /* 主色调 - 紫色系 */
+    --primary-color: #7C3AED;
+    --primary-light: #A78BFA;
+    --primary-dark: #5B21B6;
+    --primary-darker: #4C1D95;
+    
+    /* 背景色 */
+    --bg-color: #ffffff;
+    --bg-secondary: #f8f7ff;
+    --bg-module: linear-gradient(145deg, 
+        rgba(167, 139, 250, 0.08) 0%, 
+        rgba(139, 92, 246, 0.05) 30%, 
+        rgba(124, 58, 237, 0.02) 70%, 
+        rgba(109, 40, 217, 0.01) 100%);
+    --bg-header: linear-gradient(135deg, 
+        #7C3AED 0%, 
+        #6D28D9 30%, 
+        #5B21B6 70%, 
+        #4C1D95 100%);
+    
+    /* 文字颜色 */
+    --text-primary: #1F2937;
+    --text-secondary: #374151;
+    --text-light: #6B7280;
+    --text-on-dark: #ffffff;
+    
+    /* 边框 */
+    --border-color: rgba(167, 139, 250, 0.3);
+    --border-module: linear-gradient(135deg, 
+        rgba(167, 139, 250, 0.5), 
+        rgba(124, 58, 237, 0.8), 
+        rgba(91, 33, 182, 0.5)) 1;
+    
+    /* 阴影 */
+    --shadow-light: 0 6px 20px rgba(124, 58, 237, 0.05);
+    --shadow-medium: 0 12px 35px rgba(124, 58, 237, 0.12);
+    --shadow-strong: 0 6px 25px rgba(124, 58, 237, 0.18);
+    
+    /* 科幻元素 */
+    --neon-glow: 0 0 10px rgba(124, 58, 237, 0.7), 0 0 20px rgba(124, 58, 237, 0.5), 0 0 30px rgba(124, 58, 237, 0.3);
+    --neon-text: 0 0 5px rgba(124, 58, 237, 0.8), 0 0 10px rgba(124, 58, 237, 0.6);
+    
+    /* 过渡 */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========== 深色主题变量 ========== */
+.dark-theme {
+    /* 主色调 - 紫色系（提高明度） */
+    --primary-color: #A78BFA;
+    --primary-light: #C4B5FD;
+    --primary-dark: #8B5CF6;
+    --primary-darker: #7C3AED;
+    
+    /* 背景色 */
+    --bg-color: #0F172A;
+    --bg-secondary: #1E293B;
+    --bg-module: linear-gradient(145deg, 
+        rgba(167, 139, 250, 0.12) 0%, 
+        rgba(139, 92, 246, 0.08) 30%, 
+        rgba(124, 58, 237, 0.05) 70%, 
+        rgba(109, 40, 217, 0.03) 100%);
+    --bg-header: linear-gradient(135deg, 
+        #0F172A 0%, 
+        #1E293B 30%, 
+        #334155 70%, 
+        #475569 100%);
+    
+    /* 文字颜色 */
+    --text-primary: #F1F5F9;
+    --text-secondary: #CBD5E1;
+    --text-light: #94A3B8;
+    --text-on-dark: #FFFFFF;
+    
+    /* 边框 */
+    --border-color: rgba(167, 139, 250, 0.4);
+    --border-module: linear-gradient(135deg, 
+        rgba(167, 139, 250, 0.6), 
+        rgba(124, 58, 237, 0.9), 
+        rgba(91, 33, 182, 0.6)) 1;
+    
+    /* 阴影 */
+    --shadow-light: 0 6px 20px rgba(15, 23, 42, 0.3);
+    --shadow-medium: 0 12px 35px rgba(15, 23, 42, 0.4);
+    --shadow-strong: 0 6px 25px rgba(15, 23, 42, 0.5);
+    
+    /* 科幻元素 */
+    --neon-glow: 0 0 15px rgba(167, 139, 250, 0.9), 0 0 30px rgba(167, 139, 250, 0.7), 0 0 45px rgba(167, 139, 250, 0.5);
+    --neon-text: 0 0 8px rgba(167, 139, 250, 1), 0 0 15px rgba(167, 139, 250, 0.8);
+}
