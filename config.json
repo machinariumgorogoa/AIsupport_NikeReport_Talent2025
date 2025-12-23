@@ -1,0 +1,20 @@
+{
+  "app": {
+    "name": "Sportswear Brands Talent Strategy Analysis",
+    "version": "1.0.0",
+    "defaultLanguage": "en",
+    "defaultTheme": "light"
+  },
+  "content": {
+    "path": "content/",
+    "files": {
+      "en": ["en-content-part1.html", "en-content-part2.html"],
+      "zh": ["zh-content-part1.html", "zh-content-part2.html"]
+    }
+  },
+  "features": {
+    "themeToggle": true,
+    "languageSwitch": true,
+    "moduleHoverEffects": true
+  }
+}
